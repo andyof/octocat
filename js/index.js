@@ -10,7 +10,64 @@ const img = [
   'https://octodex.github.com/images/saritocat.png',
   'https://octodex.github.com/images/plumber.jpg',
   'https://octodex.github.com/images/linktocat.jpg',
-  'https://octodex.github.com/images/kimonotocat.png'	
+  'https://octodex.github.com/images/kimonotocat.png',
+  'https://octodex.github.com/images/octonaut.jpg',
+  'https://octodex.github.com/images/trekkie.png',
+  'https://octodex.github.com/images/octobiwan.jpg',
+  'https://octodex.github.com/images/scottocat.jpg',
+  'https://octodex.github.com/images/monroe.jpg',
+  'https://octodex.github.com/images/wilson.jpg',
+  'https://octodex.github.com/images/octoclark-kentocat.jpg',
+  'https://octodex.github.com/images/cherryontop-o-cat.png',
+  'https://octodex.github.com/images/xtocat.jpg',
+  'https://octodex.github.com/images/jenktocat.jpg',
+  'https://octodex.github.com/images/scarletteocat.jpg',
+  'https://octodex.github.com/images/octdrey-catburn.jpg',
+  'https://octodex.github.com/images/waldocat.png',
+  'https://octodex.github.com/images/hipster-partycat.jpg',
+  'https://octodex.github.com/images/riddlocat.png',
+  'https://octodex.github.com/images/father_timeout.jpg',
+  'https://octodex.github.com/images/octotron.jpg',
+  'https://octodex.github.com/images/saint-nicktocat.jpg',
+  'https://octodex.github.com/images/dojocat.jpg',
+  'https://octodex.github.com/images/defunktocat.png',
+  'https://octodex.github.com/images/doctocat-brown.jpg',
+  'https://octodex.github.com/images/strongbadtocat.png',
+  'https://octodex.github.com/images/snowoctocat.png',
+  'https://octodex.github.com/images/electrocat.png',
+  'https://octodex.github.com/images/front-end-conftocat.png',
+  'https://octodex.github.com/images/twenty-percent-cooler-octocat.png',
+  'https://octodex.github.com/images/minion.png',
+  'https://octodex.github.com/images/murakamicat.png',
+  'https://octodex.github.com/images/droctocat.png',
+  'https://octodex.github.com/images/gangnamtocat.png',
+  'https://octodex.github.com/images/skitchtocat.png',
+  'https://octodex.github.com/images/goretocat.png',
+  'https://octodex.github.com/images/foundingfather_v2.png',
+  'https://octodex.github.com/images/dunetocat.png',
+  'https://octodex.github.com/images/yaktocat.png',
+  'https://octodex.github.com/images/labtocat.png',
+  'https://octodex.github.com/images/luchadortocat.png',
+  'https://octodex.github.com/images/saketocat.png',
+  'https://octodex.github.com/images/mountietocat.png',
+  'https://octodex.github.com/images/minertocat.png',
+  'https://octodex.github.com/images/jetpacktocat.png',
+  'https://octodex.github.com/images/welcometocat.png',
+  'https://octodex.github.com/images/inflatocat.png',
+  'https://octodex.github.com/images/filmtocat.png',
+  'https://octodex.github.com/images/catstello.png',
+  'https://octodex.github.com/images/bannekat.png',
+  'https://octodex.github.com/images/dinotocat.png',
+  'https://octodex.github.com/images/mona-lovelace.jpg',
+  'https://octodex.github.com/images/saint_nictocat.jpg',
+  'https://octodex.github.com/images/justicetocat.jpg',
+  'https://octodex.github.com/images/snowtocat_final.jpg',
+  'https://octodex.github.com/images/scubatocat.png',
+  'https://octodex.github.com/images/surftocat.png',
+  'https://octodex.github.com/images/boxertocat_octodex.jpg',
+  'https://octodex.github.com/images/puddle_jumper_octodex.jpg',
+  'https://octodex.github.com/images/Sentrytocat_octodex.jpg',
+  'https://octodex.github.com/images/Terracottocat_Single.png'
 ];
 
 let total = 0;
@@ -88,8 +145,18 @@ flip_auto();
 flip_click();
 
 function randomIMG() {
-  let c_array = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12];
+  const c_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   let c_length = c_array.length;
+  let i_length = img.length;
+  for (i = 0; i < c_length) {
+    const i_id = Math.floor(Math.random() * (i_length - 1)) + 1;
+    if (!c_array.includes(i_id)) {
+      c_array[i] = i_id;
+      c_array[i+1] = i_id;
+      i += 2;
+    }
+  }
+
   const cards = document.querySelectorAll('.card');
 
   Array.from(cards).forEach((card) => {
