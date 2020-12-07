@@ -148,7 +148,7 @@ function randomIMG() {
   const c_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   let c_length = c_array.length;
   let i_length = img.length;
-  for (i = 0; i < c_length) {
+  for (i = 0; i < c_length;) {
     const i_id = Math.floor(Math.random() * (i_length - 1)) + 1;
     if (!c_array.includes(i_id)) {
       c_array[i] = i_id;
